@@ -1,5 +1,3 @@
-import Foundation
-
 class Pessoa {
 
     var nome: String
@@ -11,6 +9,9 @@ class Pessoa {
     }
 
     func getDescricao() -> String {
-        return String(format: "Nome: %@\nEmail: %@", self.nome, self.email)
+        return """
+        Nome: \(self.nome)
+        Email: \(self.email)
+        """
     }
 }
