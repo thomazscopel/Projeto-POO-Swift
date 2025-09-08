@@ -15,7 +15,7 @@ class Aluno: Pessoa {
         return ("""
         \(super.getDescricao())
         Matricula: \(self.matricula)
-        Plano: \(self.plano)
+        Plano: \(self.plano.nome)
         """)
     }
 }
