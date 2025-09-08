@@ -1,0 +1,55 @@
+@startuml
+class "Pessoa" {
+    nome: String
+    email: String
+    getDescricao() -> String
+}
+
+class "Aluno" {
+    matricula: String
+    nivel: NivelAluno
+    plano: Plano
+    Aluno(nome, email, matricula, plano)
+    override getDescricao()
+}
+
+
+enum "NivelAluno" {
+    case iniciante
+    case intermediario
+    case avancado
+}
+
+class "Instrutor" {
+   especialidade: String
+   Instrutor(nome, email, especialidade)
+   override getDescricao()
+   
+}
+
+class "Plano" {
+    - nome: String
+    calcularMensalidade() -> Double
+}
+
+class "PlanoMensal" {
+    PlanoMensal()
+    override calcularMensalidade()
+}
+
+class "PlanoAnual" {
+    PlanoAnual()
+    override calcularMensalidade()
+}
+
+Pessoa <|-- Aluno
+Pessoa <|-- Instrutor
+
+Aluno -- NivelAluno
+
+Plano <|-- PlanoMensal
+Plano <|-- PlanoAnual
+
+Instrutor -- Aluno : instrui >
+Aluno -- Plano : possui >
+@enduml
