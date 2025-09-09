@@ -1,3 +1,3 @@
-let mAluno = Aluno(nome: "Jorge", email: "@email.com", matricula: "Ativa", nivel: .intermediario, plano: PlanoAnual())
+let mAula = Aula(nome: "Joao", Instrutor(nome: "Joao Instrutor", email: "instrutor@email.com", especialidade: "especial"))
 
-print(mAluno.getDescricao())
+print(mAula.getDescricao())
