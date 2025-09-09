@@ -10,7 +10,7 @@ class Aula {
     func getDescricao() -> String {
         return """
         Nome da aula: \(self.nome)
-        Nome do instrutor: \(self.instrutor)
+        Nome do instrutor: \(self.instrutor.nome)
         """
     }
 }
