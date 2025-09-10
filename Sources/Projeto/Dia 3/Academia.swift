@@ -30,11 +30,11 @@ class Academia {
     }
 
     func matricularAluno(_ aluno: Aluno) {
-        if alunosMatriculados[aluno.nome] != nil {
+        if alunosMatriculados[aluno.matricula] != nil {
             print("Aluno \(aluno.nome) já está matriculado.")
             return
         }
-        alunosMatriculados[aluno.nome] = aluno
+        alunosMatriculados[aluno.matricula] = aluno
         print("Aluno \(aluno.nome) matriculado com sucesso.")
     }
 
