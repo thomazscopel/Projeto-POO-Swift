@@ -1,15 +1,15 @@
 class Academia {
     private let nome: String
-    private var alunosMatriculados: [String: Aluno]
-    private var instrutoresContratados: [String: Instrutor]
-    private var aparelhos: [Aparelho]
-    private var aulasDisponiveis: [Aula]
+    private var alunosMatriculados: [String: Aluno] = [:] // Chave: matricula do aluno
+    private var instrutoresContratados: [String: Instrutor] = [:] // Chave: email do instrutor
+    private var aparelhos: [Aparelho] = []
+    private var aulasDisponiveis: [Aula] = []
 
     init(nome: String,
-    alunosMatriculados: [String: Aluno] = [:],
-    instrutoresContratados: [String: Instrutor] = [:],
-    aparelhos: [Aparelho] = [],
-    aulasDisponiveis: [Aula] = []) {
+    alunosMatriculados: [String: Aluno],
+    instrutoresContratados: [String: Instrutor],
+    aparelhos: [Aparelho],
+    aulasDisponiveis: [Aula]) {
         self.nome = nome
         self.alunosMatriculados = alunosMatriculados
         self.instrutoresContratados = instrutoresContratados
@@ -31,7 +31,6 @@ class Academia {
         matricularAluno(novoAluno)
         return novoAluno
     }
-    
 
 
 }
