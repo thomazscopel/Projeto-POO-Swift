@@ -17,6 +17,18 @@ class Academia {
         self.aulasDisponiveis = aulasDisponiveis
     }
 
+    func adicionarAparelho(_ aparelho: Aparelho) {
+        self.aparelhos.append(aparelho)
+    }
+
+    func adicionarAula(_ aula: Aula) {
+        self.aulasDisponiveis.append(aula)
+    }
+
+    func contratarInstrutor(_ instrutor: Instrutor) {
+        self.instrutoresContratados[instrutor.email] = instrutor
+    }
+
     func matricularAluno(_ aluno: Aluno) {
         if alunosMatriculados[aluno.nome] != nil {
             print("Aluno \(aluno.nome) já está matriculado.")
