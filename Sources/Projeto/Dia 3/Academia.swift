@@ -30,11 +30,11 @@ class Academia {
     }
 
     func matricularAluno(_ aluno: Aluno) {
-        if alunosMatriculados[aluno.nome] != nil {
+        if alunosMatriculados[aluno.matricula] != nil {
             print("Aluno \(aluno.nome) já está matriculado.")
             return
         }
-        alunosMatriculados[aluno.nome] = aluno
+        alunosMatriculados[aluno.matricula] = aluno
         print("Aluno \(aluno.nome) matriculado com sucesso.")
     }
 
@@ -44,6 +44,36 @@ class Academia {
         return novoAluno
     }
     
+    func buscarAluno(porMatricula matricula: String) -> Aluno? {
+        
+        return alunosMatriculados[matricula]
+    
+    }
+
+    func listarAlunos() {
+        print("--- Lista de Alunos Matriculados ---")
+        
+        if (alunosMatriculados.count == 0) {
+
+            print("Nenhum Aluno matriculado\n")
+            
+
+        }
+        else {
+            let ordenado = alunosMatriculados.sorted(by: { $0.value.nome < $1.value.nome } )
+
+            for i in ordenado{
+                print(i)
+                print(i.value.getDescricao())
+                print()
+            }
+
+        }
+        print("\n-----------------")
+        
+    }
+
+
 
 
 }
