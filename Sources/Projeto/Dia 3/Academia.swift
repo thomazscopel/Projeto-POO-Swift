@@ -17,5 +17,21 @@ class Academia {
         self.aulasDisponiveis = aulasDisponiveis
     }
 
+    func matricularAluno(_ aluno: Aluno) {
+        if alunosMatriculados[aluno.nome] != nil {
+            print("Aluno \(aluno.nome) já está matriculado.")
+            return
+        }
+        alunosMatriculados[aluno.nome] = aluno
+        print("Aluno \(aluno.nome) matriculado com sucesso.")
+    }
+
+    func matricularAluno(nome: String, email: String, matricula: String, nivel: NivelAluno, plano: Plano) -> Aluno {
+        let novoAluno = Aluno(nome: nome, email: email, matricula: matricula, nivel: nivel, plano: plano)
+        matricularAluno(novoAluno)
+        return novoAluno
+    }
+    
+
 
 }
