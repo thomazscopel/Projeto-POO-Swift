@@ -73,6 +73,21 @@ class Academia {
         
     }
 
+    func listarAulas() {
+        print("--- Lista de Aulas ---")
+        if (aulasDisponiveis.count == 0) {
+            print("Sem Aulas")
+            
+        } 
+        else {
+            for i in aulasDisponiveis{
+                print(i.getDescricao())
+            }
+
+        }
+        print("\n-----------------")
+        
+    }
 
 
 
