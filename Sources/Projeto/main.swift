@@ -11,8 +11,6 @@ let instrutor2 = Instrutor(nome: "Instrutor2", email: "Instrutor2@gmail", especi
 academia.contratarInstrutor(instrutor1)
 academia.contratarInstrutor(instrutor2)
 
-
-
 let aluno1: Aluno = academia.matricularAluno(nome: "Zezinho", email:"Zezinho@gamil", matricula: "123", nivel: .iniciante, plano: planoAnual)
 let aluno2: Aluno = academia.matricularAluno(nome: "Jorge", email:"jorginho@gamil", matricula: "321", nivel: .iniciante, plano: planoMensal)
 

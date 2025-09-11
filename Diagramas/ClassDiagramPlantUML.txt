@@ -1,4 +1,57 @@
 @startuml
+class "Academia"  {
+    - nome: String
+    - alunosMatriculados: [String:Aluno]
+    - instrutoresContratados: [String:Instrutor]
+    - aparelhos: [Aparelho]
+    - aulasDisponiveis: [Aula]
+    + Academia(nome: String)
+    + adicionarAparelho(_ aparelho: Aparelho)
+    + adicionarAula(_ aula: Aula)
+    + contratarInstrutor(_ instrutor: Instrutor)
+    + matricularAluno(_ aluno: Aluno)
+    + matricularAluno(nome: String, email: String, matricula: String, nivel: NivelAluno, plano: Plano) -> Aluno
+    + buscarAluno(porMatricula matricula: String) -> Aluno?
+    + listarAlunos()
+    + listarAulas()
+    + extension gerarRelatorio() -> (totalAlunos: Int, totalInstrutores: Int, totalAulas: Int)
+}
+
+
+class "Aparelho" {
+    + nomeItem: String
+    - dataUltimaManutencao: String
+    + Aparelho(nomeItem: String)
+    + realizarManutencao() -> Bool
+}
+
+class "Aula" {
+    + nome: String
+    + instrutor: Instrutor
+    + Aula(nome: String, instrutor: Instrutor)
+    + getDescricao() -> String
+}
+
+class "AulaColetiva" {
+    - alunosInscritos: [String:Aluno]
+    + capacidadeMaxima: Int
+    + AulaColetiva(nome:String, instrutor: Instrutor, capacidadeMaxima: Int)
+    + inscreverAluno(aluno:Aluno)
+    + override getDescricao() -> String
+}
+
+class "AulaPersonal" {
+    + aluno: Aluno
+    + AulaPersonal(nome: String, instutor: Instrutor, aluno: Aluno)
+    + override getDescricao() -> String
+}
+
+protocol "Manutencao" {
+    + nomeItem: String { get }
+    + dataUltimaManutencao: String { get }
+    + realizarManutencao() -> Bool
+}
+
 class "Pessoa" {
     nome: String
     email: String
