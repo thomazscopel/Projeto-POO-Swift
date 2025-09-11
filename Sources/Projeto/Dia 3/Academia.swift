@@ -5,16 +5,8 @@ class Academia {
     private var aparelhos: [Aparelho] = []
     private var aulasDisponiveis: [Aula] = []
 
-    init(nome: String,
-    alunosMatriculados: [String: Aluno],
-    instrutoresContratados: [String: Instrutor],
-    aparelhos: [Aparelho],
-    aulasDisponiveis: [Aula]) {
+    init(nome: String) {
         self.nome = nome
-        self.alunosMatriculados = alunosMatriculados
-        self.instrutoresContratados = instrutoresContratados
-        self.aparelhos = aparelhos
-        self.aulasDisponiveis = aulasDisponiveis
     }
 
     func adicionarAparelho(_ aparelho: Aparelho) {
@@ -39,7 +31,7 @@ class Academia {
     }
 
     func matricularAluno(nome: String, email: String, matricula: String, nivel: NivelAluno, plano: Plano) -> Aluno {
-        let novoAluno = Aluno(nome: nome, email: email, matricula: matricula, nivel: nivel, plano: plano)
+        let novoAluno: Aluno = Aluno(nome: nome, email: email, matricula: matricula, nivel: nivel, plano: plano)
         matricularAluno(novoAluno)
         return novoAluno
     }
@@ -84,13 +76,17 @@ class Academia {
         else {
             for i in aulasDisponiveis{
                 print(i.getDescricao())
+                print()
             }
 
         }
         print("\n-----------------")
         
     }
+}
 
-
-
+extension Academia {
+    func gerarRelatorio() -> (totalAlunos: Int, totalInstrutores: Int, totalAulas: Int) {
+        return (alunosMatriculados.count, instrutoresContratados.count, aulasDisponiveis.count)
+    }
 }

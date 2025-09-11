@@ -9,7 +9,7 @@ class AulaPersonal: Aula {
     
     override func getDescricao() -> String {
         return """
-        Nome da aula: \(self.nome)
+        Aula Personal: \(self.nome)
         Nome do instrutor: \(self.instrutor.nome)
         Nome do aluno: \(self.aluno.nome)
         """
