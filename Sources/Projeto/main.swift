@@ -14,15 +14,16 @@ var academia = Academia(nome: "Nome", alunosMatriculados: [alunoTeste.matricula 
     aparelhos: [aparelhoTeste],
     aulasDisponiveis: [mAula])
 
-print(academia.buscarAluno(porMatricula: alunoTeste.matricula)!)
+
 
 academia.listarAlunos()
 
-academia.matricularAluno(alunoTeste)
+//academia.matricularAluno(alunoTeste)
 
-print(academia.buscarAluno(porMatricula: alunoTeste.matricula)!)
+//print(academia.buscarAluno(porMatricula: alunoTeste.matricula)?.nome ?? "Aluno não encontrado")
 
-academia.listarAlunos()
+//academia.listarAlunos()
+//academia.listarAulas()
 
 
 

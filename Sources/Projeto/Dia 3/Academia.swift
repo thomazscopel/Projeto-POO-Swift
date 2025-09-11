@@ -61,11 +61,13 @@ class Academia {
         }
         else {
             let ordenado = alunosMatriculados.sorted(by: { $0.value.nome < $1.value.nome } )
+            var countAluno = 1
 
             for i in ordenado{
-                print(i)
+                print("Aluno \(countAluno)")
                 print(i.value.getDescricao())
                 print()
+                countAluno += 1
             }
 
         }
