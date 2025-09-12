@@ -14,3 +14,8 @@ base sólida e organizada.
 ### Diagrama de Classes
 
 <img width="593" height="789" alt="ClassDiagram" src="https://github.com/user-attachments/assets/c7a9624e-590d-4756-a9d7-81d926ff2c6d" />
+
+### Diagrama de Classe Final
+
+<img width="1523" height="1224" alt="image" src="https://github.com/user-attachments/assets/c69d1a7e-2a11-4a38-998d-da75b66454d4" />
+
