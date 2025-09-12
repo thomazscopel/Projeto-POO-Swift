@@ -77,7 +77,7 @@ class "Instrutor" {
    especialidade: String
    Instrutor(nome, email, especialidade)
    override getDescricao()
-   
+
 }
 
 class "Plano" {
@@ -97,12 +97,22 @@ class "PlanoAnual" {
 
 Pessoa <|-- Aluno
 Pessoa <|-- Instrutor
-
-Aluno -- NivelAluno
-
+Aluno .. NivelAluno
 Plano <|-- PlanoMensal
 Plano <|-- PlanoAnual
-
-Instrutor -- Aluno : instrui >
 Aluno -- Plano : possui >
+
+Aula <|-- AulaColetiva
+Aula <|-- AulaPersonal
+Manutencao .. Aparelho
+
+Academia "1" -- "*" Aluno : "matrícula"
+Academia "1" -- "*" Instrutor : "contrata"
+Academia "1" -- "*" Aula : "disponibiliza"
+Academia "1" -- "*" Aparelho : "possui"
+
+Aula "*" -- "1" Instrutor
+AulaColetiva "1" -- "0..*" Aluno : "inscreve"
+AulaPersonal "1" -- "1" Aluno
+
 @enduml
